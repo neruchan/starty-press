@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+</head>
+<script>
+$(function(){
+	$("#check_btn").click(function(){
+		$("#check_form").submit();
+	});
+
+});
+
+</script>
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+<form action="" id="check_form" method="post">
+<!--table of content start-->
+<div id="title02">アドコード管理画面</div>
+<p class="border-btm"></p>
+
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="110"class="title-tbl02">ID</td>
+<td><#PRINT bid#></td>
+</tr>
+<tr>
+<td class="title-tbl02">タイトル</td>
+<td><input type="text" name="banner_title" value="<#PRINT title#>"></td>
+</tr>
+<tr>
+<td class="title-tbl02">飛先リンク</td>
+<td><input type="text" name="banner_url" value="<#PRINT url#>"></td>
+</tr>
+<tr>
+<td class="title-tbl02">アドコードリンク<br><small>*このリンクをバーナーに貼って下さい</small></td>
+<!--td>http://press.tiary.jp/click.php?bid=<#PRINT bid#></td-->
+<td>http://www.starty-in.jp/tpress/click.php?bid=<#PRINT bid#></td>
+</tr>
+<tr>
+<td class="title-tbl02">クリック数合計</td>
+<td><#PRINT click_num_total#></td>
+</tr>
+</table>
+
+<div id="line" align="center">
+<input type="button" id="check_btn" class="space02" value="編集" />&nbsp;
+</div>
+<input type="hidden" name="send_flag" value="send_flag" />
+<input type="hidden" name="bid" value="<#PRINT bid#>" />
+</form>
+<br>
+
+今月(<#PRINT current_month#>)のクリック数:<#PRINT current_month_click#>
+
+<br>
+<table width="300" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="100" class="title-tbl">日付</td>
+<td width="150" class="title-tbl">クリック数</td>
+</tr>
+<#LOOP_START historyAll#>
+<tr>
+<td class="tbl"><#LOOP_PRINT year#>年<#LOOP_PRINT month#>月</td>
+<td class="tbl"><#LOOP_PRINT clicknum#></td>
+</tr>
+<#LOOP_END historyAll#>
+</table>
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

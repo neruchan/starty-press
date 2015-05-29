@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+<script>
+	$(function(){
+		$("#save_btn").click(function(){
+		$("#save_form").submit();
+	});
+	});
+</script>
+<script type='text/javascript'>//<![CDATA[
+	$(function(){
+	    $(".preview").css({"background-size":  "550px auto", "background-repeat": "no-repeat", "background-position": "center center", "background-image": "url()"});
+    })
+
+function onUpload(fileObj) {
+    var file;
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg(file);
+    }
+}
+
+function onbrowse() {
+    document.getElementById('bannerfile').click();
+}
+
+function changeimg(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".preview").css({"background-size":  "550px auto", "background-repeat": "no-repeat", "background-position": "center center", "background-image": "url(" + str + ")"});
+}
+
+	$(function(){
+	    $(".preview2").css({"background-size":  "220px auto", "background-repeat": "no-repeat", "background-position": "center center", "background-image": "url()"});
+    })
+
+    $(function(){
+	    $(".preview3").css({"background-size":  "220px auto", "background-repeat": "no-repeat", "background-position": "center center", "background-image": "url()"});
+    })
+
+function onUpload2(fileObj) {
+    var file;
+
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg2;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg2(file);
+    }
+}
+
+function onbrowse2() {
+    document.getElementById('bannerfile2').click();
+}
+
+function changeimg2(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".preview2").css({"background-size":  "220px auto", "background-repeat": "no-repeat", "background-position": "center center", "background-image": "url(" + str + ")"});
+}
+
+
+function onUpload3(fileObj) {
+    var file;
+
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg3;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg3(file);
+    }
+}
+
+function onbrowse3() {
+    document.getElementById('bannerfile3').click();
+}
+
+function changeimg3(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".preview3").css({"background-size":  "220px auto", "background-repeat": "no-repeat", "background-position": "center center", "background-image": "url(" + str + ")"});
+}
+//]]>
+
+</script>
+<script>
+$(function(){
+	if($("#part_flag").val()==3){
+			$("#show1_err").show();
+			$("#show2_err").hide();
+			$("#show3_err").hide();
+			$("#show1").show();
+			$("#show2").hide();
+			$("#show3").hide();
+			$("#bannerfile").show();
+			$("#bannerfile2").hide();
+			$("#bannerfile3").hide();
+	}
+
+	if($("#part_flag").val()==4){
+		$("#show1").hide();
+		$("#show2").show();
+		$("#show3").hide();
+		$("#show1_err").hide();
+		$("#show2_err").show();
+		$("#show3_err").hide();
+		$("#bannerfile").hide();
+		$("#bannerfile2").show();
+		$("#bannerfile3").hide();
+	}
+
+	if($("#part_flag").val()==6){
+		$("#show1").hide();
+		$("#show2").hide();
+		$("#show3").show();
+		$("#show1_err").hide();
+		$("#show2_err").hide();
+		$("#show3_err").show();
+		$("#bannerfile").hide();
+		$("#bannerfile2").hide();
+		$("#bannerfile3").show();
+	}
+
+	$("#part_flag").change(function(){
+		if($("#part_flag").val()==3){
+			$("#show1_err").show();
+			$("#show2_err").hide();
+			$("#show3_err").hide();
+			$("#show1").show();
+			$("#show2").hide();
+			$("#show3").hide();
+			$("#bannerfile").show();
+			$("#bannerfile2").hide();
+			$("#bannerfile3").hide();
+		}
+
+		if($("#part_flag").val()==4){
+			$("#show1").hide();
+			$("#show2").show();
+			$("#show3").hide();
+			$("#show1_err").hide();
+			$("#show2_err").show();
+			$("#show3_err").hide();
+			$("#bannerfile").hide();
+			$("#bannerfile2").show();
+			$("#bannerfile3").hide();
+		}
+
+		if($("#part_flag").val()==6){
+			$("#show1").hide();
+			$("#show2").hide();
+			$("#show3").show();
+			$("#show1_err").hide();
+			$("#show2_err").hide();
+			$("#show3_err").show();
+			$("#bannerfile").hide();
+			$("#bannerfile2").hide();
+			$("#bannerfile3").show();
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">広告管理画面 > 新規投稿</div>
+<div class="number"><a href="main4.php"><input type="button" class="space02" value="新規投稿" /></a>　<a href="guide.html"><input type="button" class="space02" value="掲載箇所" /></a>　<a href="banner.php"><input type="button" class="space02" value="バナ一一覧を見る" /></a></div>
+<p class="border-btm"></p>
+<form action="" method="post" id="save_form" enctype="multipart/form-data">
+<table border="0" cellspacing="2" cellpadding="3" width="930">
+<tr>
+<td class="title-tbl">バナープレビュー</td>
+<td class="title-tbl" width="60">アップロード</td>
+<td class="title-tbl" width="180">掲載期間</td>
+</tr>
+<tr>
+<td class="title-tbl4" colspan="3">掲載箇所 :<select name="part_flag" id="part_flag">
+<#PRINT part_flag_pulldown#>
+</select></td>
+</tr>
+<tr>
+<td class="tbl"><input type="button"  class="preview"  id="show1"onclick="javascript:onbrowse()"/>
+<input type="button"  class="preview2"id="show2"  onclick="javascript:onbrowse2()"/>
+<input type="button"  class="preview3"id="show3"  onclick="javascript:onbrowse3()"/>
+<table>
+<tr>
+<td>リンク先URL</td><td><input type="text" class="form02b" name="ba_url" value="<#PRINT ba_url#>"/></td>
+</tr>
+<#PRINT ba_url_err#>
+<tr>
+<td>クライアント名</td><td><input type="text" class="form02b"  name="ba_title" value="<#PRINT ba_title#>"/></td>
+</tr>
+<#PRINT ba_title_err#>
+</table>
+
+</td>
+<td class="tbl"><input type="file" onchange="onUpload(this);"id="bannerfile" name="bannerfile"/>
+<input type="file" onchange="onUpload2(this);"id="bannerfile2" name="bannerfile2"/>
+<input type="file" onchange="onUpload3(this);"id="bannerfile3" name="bannerfile3"/>
+<br />
+<p class="red" id="show1_err">※ サイズ 468 x 60px<br />※ 1MB以下<br />※ 表示場所は右上です。<#PRINT banner_img_err#></p>
+<p class="red" id="show2_err">※ サイズ 220 x 220px<br />※ 1MB以下<br />※ 表示場所は右カラムです。<#PRINT banner_img_err2#></p>
+<p class="red" id="show3_err">※ サイズ 220 x 105px<br />※ 1MB以下<br />※ 表示場所は右カラムです。<#PRINT banner_img_err3#></p>
+</td>
+<td class="tbl">
+<select name="ba_start_y">
+<#PRINT start_year_pulldown#>
+</select>年 <select name="ba_start_m">
+<#PRINT start_month_pulldown#>
+</select>月 <select name="ba_start_d">
+<#PRINT start_day_pulldown#>
+</select>日
+<div align="center">～</div>
+<select name="ba_end_y">
+<#PRINT end_year_pulldown#>
+</select>年 <select name="ba_end_m">
+<#PRINT end_month_pulldown#>
+</select>月 <select name="ba_end_d">
+<#PRINT end_day_pulldown#>
+</select>日
+<#PRINT time_err#>
+</td>
+</tr>
+</table>
+<input type="hidden" name="save_flag" value="save_flag" />
+</form>
+
+<div align="right">
+<a href="javascript:void(0)" id="save_btn"><input type="button" class="space02" value="保存" /></a> &nbsp;
+<a href="banner.php"><input type="button" class="space02" value="バナ一一覧を見る" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

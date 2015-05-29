@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+<script>
+	$(function(){
+		$("#save_btn").click(function(){
+		$("#save_form").submit();
+	});
+	});
+</script>
+
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">コンバージョンタグ管理 > アドコードを発行</div>
+<div class="number"><#INCLUDE navigation-conversion.template#></div>
+<p class="border-btm"></p>
+<form action="" method="post" id="save_form" enctype="multipart/form-data">
+
+<table>
+<tr>
+<td class="title-tbl02">バーナータイトル</td><td><input type="text" class="form02b" name="ba_title" value="<#PRINT ba_title#>"/></td>
+</tr>
+<#PRINT ba_title_err#>
+<tr>
+<td class="title-tbl02">リンク先URL</td><td><input type="text" class="form02b" name="ba_url" value="<#PRINT ba_url#>"/></td>
+</tr>
+<#PRINT ba_url_err#>
+<tr>
+<td class="title-tbl02">クライアントコード</td><td><input type="text" class="form02b"  name="ba_client" value="<#PRINT ba_client#>"/></td>
+</tr>
+<#PRINT ba_client_err#>
+</table>
+<input type="hidden" name="save_flag" value="save_flag" />
+</form>
+<br>
+<a href="javascript:void(0)" id="save_btn"><input type="button" class="space02" value="保存" /></a> &nbsp;
+<input type="button" class="space02" value="アドコード一覧を見る" onclick="location.href='banner.php'"/>
+
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

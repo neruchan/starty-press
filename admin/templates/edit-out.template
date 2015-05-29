@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+<script>
+$(function(){
+	$("#update_btn").click(function(){
+		$("#update_form").submit();
+	});
+
+	$("#client_btn").click(function(){
+		if($("#client_url").val()!=""){
+			$("#client_show").text("http://model.tiary.jp/ad.php?ad=" + $("#aid").val());
+		}
+	});
+});
+</script>
+<script type='text/javascript'>//<![CDATA[
+	$(function(){
+	    $(".propicunknown").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(<#PRINT image#>)"});
+    })
+
+function onUpload(fileObj) {
+    var file;
+
+    if (fileObj.files) {
+        file = fileObj.files[0];
+        var fr = new FileReader;
+        fr.onloadend = changeimg;
+        fr.readAsDataURL(file)
+    } else {
+        file = fileObj.value;
+        changeimg(file);
+    }
+}
+
+function onbrowse() {
+    document.getElementById('article_img').click();
+}
+
+function changeimg(str) {
+    if(typeof str === "object") {
+        str = str.target.result; // file reader
+    }
+
+    $(".propicunknown").css({"background-size":  "100px auto", "background-repeat": "no-repeat", "background-image": "url(" + str + ")"});
+}
+//]]>
+
+</script>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">記事編集画面</div>
+<p class="border-btm"></p>
+<form action="" method="post"  enctype="multipart/form-data" id="update_form" name="update_form">
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="130" class="title-tbl02">NO</td>
+<td><#PRINT no#></td>
+</tr>
+<tr>
+<td class="title-tbl02">ID</td>
+<td><#PRINT aid#></td>
+</tr>
+<tr>
+<td class="title-tbl02">タイトル</td>
+<td><input type="text" class="form01" name="title" value="<#PRINT title#>"/></td>
+</tr>
+<#PRINT title_err#>
+<tr>
+<td class="title-tbl02">カテゴリ</td>
+<td>
+<#PRINT category_checkbox#>
+</td>
+</tr>
+<#PRINT category_err#>
+<tr>
+<td class="title-tbl02">投稿日時</td>
+<td><#PRINT addtime#></td>
+</tr>
+<tr>
+<td class="title-tbl02">画像</td>
+<td class="pic"><div class="pic-wrap"><!--<input type="image"  alt="" class="propicunknown" onclick="javascript:onbrowse()"/>--><input type="button" class="propicunknown" onclick="javascript:onbrowse()" /></div>  <input type="file" class="form03" name="article_img" id="article_img"  onchange="onUpload(this);"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">内容</td>
+<td>
+<textarea class="form04" rows="" cols="" name="contents"><#PRINT contents#></textarea>
+</td>
+</tr>
+<#PRINT contents_err#>
+<tr>
+<td class="title-tbl02">提供元リンク</td>
+<td class="link"><input type="text" class="form01" name="links" value="<#PRINT links#>"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">この記事がFBに反映させる</td>
+<td><input type="checkbox" name="postToFb" <#PRINT postToFbChecked#> ></td>
+</tr>
+<tr>
+<td class="title-tbl02">記事タイプ</td>
+<td><select name="kiji_type" id="kiji_type">
+<#PRINT kiji_category_pulldown#>
+</select></td>
+</tr>
+<tr>
+<td class="title-tbl02">TAG</td>
+<td><input type="text" class="form01" name="tag" value="<#PRINT tag#>"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">PV数</td>
+<td><input type="text" class="form01" name="pv" value="<#PRINT pv#>"/><br></td>
+</tr>
+</table>
+<input type="hidden" name="update_flag" value="update_flag" />
+<input type="hidden" id="aid" name="aid" value="<#PRINT aid#>" />
+</form>
+<div id="line" align="center">
+<a href="javascript:void(0)" id="update_btn"><input type="button" class="space02" value="保存" /></a> &nbsp;
+<a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

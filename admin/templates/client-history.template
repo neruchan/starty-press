@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+</head>
+<script>
+	$(function(){
+		$("#save_btn").click(function(){
+		$("#save_form").submit();
+	});
+	});
+</script>
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+
+<br>
+<div id="title02">クライアント売り上げ履歴-<#PRINT year#>年<#PRINT month#>月</div>
+<p class="border-btm"></p>
+
+<br>
+<table width="300" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="100" class="title-tbl">日付</td>
+<td width="150" class="title-tbl">売り上げ</td>
+</tr>
+<#LOOP_START historyAll#>
+<tr>
+<td class="tbl"><#LOOP_PRINT purchase_comp_date#></td>
+<td class="tbl"><#LOOP_PRINT total_money#></td>
+</tr>
+<#LOOP_END historyAll#>
+</table>
+<!--end of table-->
+<br>
+<br>
+<a href="client-detail.php?cid=<#PRINT id#>"><input type="button" class="space02" value="クライアント情報に見る" /></a>
+
+
+</div>
+</body>
+</html>

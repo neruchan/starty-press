@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<title>TiARYモデル　｜　管理画面</title>
+<script>
+$(function(){
+	$("#add_btn").click(function(){
+		$("#add_form").submit();
+	});
+});
+</script>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">外部記事投稿画面</div>
+<p class="border-btm"></p>
+
+<p class="red">※ は必須項目です。</p>
+<form action="" method="post"  enctype="multipart/form-data" id="add_form" name="add_form">
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<!--
+<tr>
+<td width="130" class="title-tbl02">NO</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="title-tbl02">ID</td>
+<td>001</td>
+</tr>
+-->
+<tr>
+<td class="title-tbl02">タイトル <span class="red">※</span></td>
+<td><input type="text" class="form01" name="title" value="<#PRINT title#>"/><br />
+<span style="color:#aaa;">トップページでは44文字で抜粋されます。</span>
+</td>
+</tr>
+<#PRINT title_err#>
+<tr>
+<td class="title-tbl02">カテゴリ <span class="red">※</span></td>
+<td>
+<#PRINT category_checkbox#>
+</td>
+</tr>
+<#PRINT category_err#>
+<tr>
+<td class="title-tbl02">画像 <span class="red">※</span></td>
+<td><input type="file" class="form03b" name="article_img"/>
+</td>
+</tr>
+<#PRINT article_img_err#>
+<tr>
+<td class="title-tbl02">内容 <span class="red">※</span></td>
+<td>
+<textarea class="form04" rows="" cols="" name="contents"><#PRINT contents#></textarea>
+</td>
+</tr>
+<#PRINT contents_err#>
+<!--tr>
+<td class="title-tbl02">提供元</td>
+<td class="link"><input type="text" class="form01" name="source_name" value="<#PRINT source_name#>"/></td>
+</tr-->
+<tr>
+<td class="title-tbl02">提供元リンク <span class="red">※</span></td>
+<td class="link"><input type="text" class="form01" name="links" value="<#PRINT links#>"/></td>
+</tr>
+<#PRINT link_err#>
+<tr>
+<td class="title-tbl02">この記事がFBに反映させる</td>
+<td><input type="checkbox" name="postToFb" <#PRINT postToFbChecked#> ></td>
+</tr>
+</table>
+<input type="hidden" name="add_flag" value="add_flag"/>
+<input type="hidden" name="up_img" value="<#PRINT up_img#>"/>
+</form>
+<div id="line" align="center">
+<a href="javascript:void(0)" id="add_btn"><input type="button" class="space02" value="内容を確認" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+<script>
+$(function(){
+	$("#update_btn").click(function(){
+		$("#update_form").submit();
+	});
+});
+</script>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">オーディション編集画面</div>
+<p class="border-btm"></p>
+<form action="" method="post" id="update_form" name="update_form">
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="110" class="title-tbl02">NO</td>
+<td><#PRINT no#></td>
+</tr>
+<tr>
+<td class="title-tbl02">ID</td>
+<td><#PRINT aid#></td>
+</tr>
+<tr>
+<td class="title-tbl02">タイトル</td>
+<td><input type="text" class="form01" name="audition_title" value="<#PRINT audition_title#>"/></td>
+</tr>
+<#PRINT audition_title_err#>
+<tr>
+<tr>
+<td class="title-tbl02">URL</td>
+<td><input type="text" class="form01" name="audition_url" value="<#PRINT audition_url#>"/></td>
+</tr>
+<#PRINT audition_url_err#>
+<tr>
+<td class="title-tbl02">募集期限</td>
+<td><input type="text" class="form02" name="end_time" value="<#PRINT end_time#>"/></td>
+</tr>
+<tr>
+<td class="title-tbl02">投稿日</td>
+<td><#PRINT addtime#></td>
+</tr>
+<tr>
+<td class="title-tbl02">NEW</td>
+<td><input type="checkbox"  name="audition_new_flag" value="1" <#PRINT audition_new_flag_check#>/></td>
+</tr>
+<tr>
+<td class="title-tbl02">詳細内容</td>
+<td>
+<textarea class="form04b" rows="" cols="" name="audition_text"><#PRINT audition_text#></textarea>
+</td>
+</tr>
+<#PRINT audition_text_err#>
+</table>
+<input type="hidden" name="update_flag" value="update_flag" />
+</form>
+<div id="line" align="center">
+<a href="javascript:void(0)" id="update_btn"><input type="button" class="space02" value="保存" /></a> &nbsp;
+<a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

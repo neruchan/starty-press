@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+</head>
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script>
+$(function(){
+	$("#update_btn").click(function(){
+		$("#update_form").submit();
+	});
+
+});
+</script>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+<form action="" method="post"  enctype="multipart/form-data" id="update_form" name="update_form">
+<!--table of content start-->
+<div id="title02">Yahoo!Beauty RSS管理画面</div>
+<p class="border-btm"></p>
+
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="110" class="title-tbl02">記事を指定する</td>
+<td><input type="checkbox" name="isSet" <#PRINT isSet#>></td>
+</tr>
+<tr>
+<td class="title-tbl02">CSVを更新</td>
+<td>
+	<input name="csv_file" type="file" id="csv_file" /> 
+</td>
+</tr>
+</table>
+<input type="hidden" name="update_flag" value="update_flag" />
+</form>
+
+<div id="line" align="center">
+<a href="javascript:void(0)" id="update_btn"><input type="button" class="space02" value="保存" /></a> &nbsp;
+<a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
+</div>
+
+<!--end of table-->
+
+
+</div>
+</body>
+</html>

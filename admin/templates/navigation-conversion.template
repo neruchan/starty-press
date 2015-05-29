@@ -1,0 +1,1 @@
+<input type="button" class="space02" value="クライアント一覧" onclick="location.href='client.php'"/><input type="button" class="space02" value="新規クライアント"  onclick="location.href='client-add.php'"/>　<input type="button" class="space02" value="アドコード一覧"  onclick="location.href='banner.php'" /><input type="button" class="space02" value="アドコード発行" onclick="location.href='banner-add.php'"/>

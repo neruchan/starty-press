@@ -1,0 +1,5 @@
+<!--header-->
+<div class="header">
+<p class="header-content"><input type="button" value="新規記事" onClick="location.href='write.php'"/> &nbsp;<input type="button" value="ログアウト" onClick="location.href='logout.php'"/></p>
+</div>
+<!--end of header-->

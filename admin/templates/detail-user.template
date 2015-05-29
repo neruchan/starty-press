@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+<title>TiARY Press (ティアリィプレス）　｜　管理画面</title>
+</head>
+
+<body>
+
+<#INCLUDE header.template#>
+
+
+<div id="container">
+
+<#INCLUDE navigation.template#>
+
+<div class="clearfix"></div>
+
+<!--table of content start-->
+<div id="title02">ユーザー管理</div>
+<p class="border-btm"></p>
+
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td class="title-tbl02">ID</td>
+<td><#PRINT id#></td>
+</tr>
+<tr>
+<td class="title-tbl02">ニックネーム</td>
+<td><#PRINT nickname#></td>
+</tr>
+<tr>
+<td class="title-tbl02">名前</td>
+<td><#PRINT fullname#></td>
+</tr>
+<tr>
+<td class="title-tbl02">フリガナ</td>
+<td><#PRINT fullname_kana#></td>
+</tr>
+<tr>
+<td class="title-tbl02">パスワード</td>
+<td>●●●●●●</td>
+</tr>
+<tr>
+<td class="title-tbl02">郵便番号</td>
+<td><#PRINT zipcode#></td>
+</tr>
+<tr>
+<td class="title-tbl02">都道府県</td>
+<td><#PRINT todoufuken#></td>
+</tr>
+<tr>
+<td class="title-tbl02">住所</td>
+<td><#PRINT banti#></td>
+</tr>
+<tr>
+<td class="title-tbl02">電話番号</td>
+<td><#PRINT phonenumber#></td>
+</tr>
+<tr>
+<td class="title-tbl02">E-mail</td>
+<td><#PRINT email#></td>
+</tr>
+<tr>
+<td class="title-tbl02">生年月日</td>
+<td><#PRINT birthday#></td>
+</tr>
+<tr>
+<td class="title-tbl02">登録年月日</td>
+<td><#PRINT addtime#></td>
+</tr>
+<tr>
+<td class="title-tbl02">PV数合計</td>
+<td><#PRINT pv_num#></td>
+</tr>
+<tr>
+<td class="title-tbl02">記事合計</td>
+<td>
+<#PRINT entry_num#>
+</td>
+</table>
+
+
+
+<!--end of table-->
+
+投稿した記事
+
+<table width="930" border="0" cellspacing="2" cellpadding="3" id="center">
+<tr>
+<td width="40" class="title-tbl">NO</td>
+<td width="60" class="title-tbl">ID</td>
+<td width="480" class="title-tbl">タイトル</td>
+<td width="100" class="title-tbl">カテゴリ</td>
+<td width="100" class="title-tbl">投稿日時</td>
+<td width="100" class="title-tbl">PV数</td>
+</tr>
+<#LOOP_START dataAll#>
+<tr>
+<td><#LOOP_PRINT no#></td>
+<td><#LOOP_PRINT id#></td>
+<td><a href="detail.php?aid=<#LOOP_PRINT id#>&no=<#LOOP_PRINT no#>"><#LOOP_PRINT title#></a></td>
+<td><#LOOP_PRINT categroy#></td>
+<td><#LOOP_PRINT addtime#></td>
+<td><#LOOP_PRINT article_access_num#></td>
+</tr>
+<#LOOP_END dataAll#>
+</table>
+
+<div id="line" align="center">
+<a href="javascript:history.go(-1)"><input type="button" class="space02" value="もどる" /></a>
+</div>
+</div>
+</body>
+</html>
