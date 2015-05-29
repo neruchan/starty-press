@@ -84,6 +84,7 @@ $PAGE_VALUE["article_addtime_pulldown"] = setOptions($addtime_sorts,$_SESSION["s
 $PAGE_VALUE["kiji_category_pulldown"] = setOptions($kiji_type,$_SESSION["sess_kiji_type"]);
 $PAGE_VALUE["article_pv_pulldown"] = setOptions($pv_sorts,$_SESSION["sess_a_pv"]);
 
+
 //sessionリセット
 unset($_SESSION["sess_a_num"]);
 unset($_SESSION["sess_audition_time"]);
