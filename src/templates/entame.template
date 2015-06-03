@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>STARTY Press（スターティープレス）―TV番組連動型プレスリリース配信サイト―</title>
+<meta name="description" content="お客様のプレスリリースやニュースリリースを各メディア・マスコミにお届けし貴社の販売促進・広報活動を支援することを目的とした総合PRサービスです。">
+<meta name="keywords" content="リリース,ニュースリリース,配信サービス,配信サイト,ＴＶメディア,配信代行,STARTY Press,無料">
+<#INCLUDE ../common/meta.php#>
+</head>
+
+<body>
+<#INCLUDE ../common/header.php#>
+
+<div id="wrapper"> 
+<div id="mainbase"> 
+
+
+<h2>エンタメ／スポーツ</h2>
+<div class="post-release">
+<ul>
+
+<#LOOP_START article_all#>
+
+<li>
+<a href="read.php?aid=<#LOOP_PRINT article_id#>"><img src="<#LOOP_PRINT article_image#>">
+<!--<span class="rank">1</span>-->
+<#LOOP_PRINT article_title#></a>
+</li>
+
+<#LOOP_END article_all#>
+
+
+</ul>
+
+
+</div>
+<div class="clear"></div>
+
+<!--page numbering-->
+<div>
+<ul class="pagination">
+<#PRINT str_prev_page#>
+<#LOOP_START pages#>
+<li><#LOOP_PRINT ipage_link_str#><#LOOP_PRINT ipage#><#LOOP_PRINT ipage_link_a#></li>
+<#LOOP_END pages#>
+<#PRINT str_next_page#>
+</ul>
+</div>
+
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+</div><!--mainbase end--> 
+<#INCLUDE ../common/sidebar.php#>
+</div><!--wrapper end--> 
+
+
+<#INCLUDE ../common/footer.php#>
+
+</body>
+</html>

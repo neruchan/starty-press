@@ -35,21 +35,8 @@
 <td><#PRINT title#></td>
 </tr>
 <tr>
-<td class="title-tbl02">クライアント名</td>
-<td><#PRINT entry_name#></td>
-</tr>
-<#PRINT nickname_field#>
-<tr>
 <td class="title-tbl02">カテゴリ</td>
 <td><#PRINT categroy#></td>
-</tr>
-<tr>
-<td class="title-tbl02">広告記事</td>
-<td><#PRINT pay_flag#></td>
-</tr>
-<tr>
-<td class="title-tbl02">ライター</td>
-<td><#PRINT writer_name#></td>
 </tr>
 <tr>
 <td class="title-tbl02">投稿日時</td>
@@ -60,14 +47,9 @@
 <td><#PRINT article_access_num#></td>
 </tr>
 <tr>
-<td class="title-tbl02">クリック数</td>
-<td><#PRINT client_num#></td>
-</tr>
-<tr>
 <td class="title-tbl02">画像</td>
 <td class="pic"><div class="pic-wrap"><img src="<#PRINT image#>" alt="" /></div></td>
 </tr>
-<#PRINT video_part#>
 <tr>
 <td class="title-tbl02">内容</td>
 <td>
@@ -81,18 +63,6 @@
 <tr>
 <td class="title-tbl02">提供元リンク</td>
 <td class="link"><a href="<#PRINT links#>" target="_blank"><#PRINT links#></a></td>
-</tr>
-<tr>
-<td class="title-tbl02">アドコード発行</td>
-<td><#PRINT client#></td>
-</tr>
-<tr>
-<td class="title-tbl02">アドコードクリック数</td>
-<td><#PRINT client_num#></td>
-</tr>
-<tr>
-<td class="title-tbl02">TAG</td>
-<td class="link"><#PRINT tag#></td>
 </tr>
 </table>
 

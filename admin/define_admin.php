@@ -60,12 +60,11 @@ $video_category_user = array(
 //記事カテゴリ
 $article_categorys = array(
 	"0" => "カテゴリ",
-	'1'=>'ライフスタイル',
-	'2'=>'ビューティ',
-	'3'=>'エンタメ',
-	'4'=>'ピックアップ',
-    "5" => "エンタメ"
+	'1'=>'ピックアップ',
+	'2'=>'ビジネス',
+	'3'=>'エンタメ/スポーツ'
 );
+
 
 // $article_categorys = array(
 // 	"0" => "カテゴリ",
@@ -96,11 +95,9 @@ $article_categorys = array(
 
 //新規、修正記事カテゴリ
 $new_article_categorys = array(
-    "1" => "Lifestyle",
-	"2" => "Beauty",
-	//"3" => "Wedding",
-	"4" => "Pick Up",
-    "5" => "Entertainment"
+   '1'=>'ピックアップ',
+	'2'=>'ビジネス',
+	'3'=>'エンタメ/スポーツ'
 );
 
 //ライラー

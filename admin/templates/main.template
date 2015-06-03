@@ -62,11 +62,6 @@
 <td width="40" class="title-tbl">NO</td>
 <td width="60" class="title-tbl">ID</td>
 <td width="480" class="title-tbl">タイトル</td>
-<td width="40" class="title-tbl">
-<select name="kiji_type" id="kiji_type">
-<#PRINT kiji_category_pulldown#>
-</select>
-</td>
 <td width="100" class="title-tbl">
 <select name="search_a_category" id="search_a_category">
 <#PRINT article_category_pulldown#>
@@ -87,7 +82,6 @@
 <td class="tbl"><#LOOP_PRINT no#></td>
 <td class="tbl"><#LOOP_PRINT id#></td>
 <td class="tbl"><a href="detail.php?aid=<#LOOP_PRINT id#>&no=<#LOOP_PRINT no#>"><#LOOP_PRINT title#></a></td>
-<td class="tbl"><#LOOP_PRINT kiji_type#></td>
 <td class="tbl"><#LOOP_PRINT categroy#></td>
 <td class="tbl"><#LOOP_PRINT addtime#></td>
 <td class="tbl"><#LOOP_PRINT article_access_num#></td>

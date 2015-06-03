@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>STARTY Press（スターティープレス）―TV番組連動型プレスリリース配信サイト―</title>
+<meta name="description" content="お客様のプレスリリースやニュースリリースを各メディア・マスコミにお届けし貴社の販売促進・広報活動を支援することを目的とした総合PRサービスです。">
+<meta name="keywords" content="リリース,ニュースリリース,配信サービス,配信サイト,ＴＶメディア,配信代行,STARTY Press,無料">
+<#INCLUDE ../common/meta.php#>
+</head>
+
+<body>
+<#INCLUDE ../common/header.php#>
+
+<div id="wrapper"> 
+<div id="mainbase"> 
+
+
+
+<div id="showcase">
+<ul id="showcase_list">
+<#LOOP_START article_banner#>
+<li><a href="read.php?aid=<#LOOP_PRINT article_id#>"><img src="<#LOOP_PRINT article_image#>" alt="耳栓一体型水泳用ゴーグル：G-RIPPLE"></a></li>
+<#LOOP_END article_banner#>
+</ul>
+<p class="prev" id="showcase_prev"><a href="javascript:void()"><img src="img/b_slide_prev.gif" alt="PREV" width="39" height="44"></a></p>
+<p class="next" id="showcase_next"><a href="javascript:void()"><img src="img/b_slide_next.gif" alt="NEXT" width="39" height="44"></a></p>
+</div>
+
+<script src="js/showcase.js"></script>
+
+
+
+
+<h2>注目のプレスリリース</h2>
+<div class="post-release">
+<ul>
+
+<#LOOP_START article_all#>
+
+<li>
+<a href="read.php?aid=<#LOOP_PRINT article_id#>"><img src="<#LOOP_PRINT article_image#>">
+<#LOOP_PRINT article_title#>
+</a>
+</li>
+
+<#LOOP_END article_all#>
+
+</ul>
+
+
+</div>
+
+
+
+
+
+
+<div align="center"><a href="/form.php" class="readmore">プレスリリースへのお申込みはこちら</a></div>
+
+
+
+
+<br>
+<br>
+
+
+<h2>インフォメーション</h2>
+<ul id="index-information">
+<li>2014.6.1 スターティープレスをリニューアルいたしました。 </li>
+</ul>
+
+
+
+
+
+
+
+
+
+</div><!--mainbase end--> 
+<#INCLUDE ../common/sidebar.php#>
+</div><!--wrapper end--> 
+
+
+<#INCLUDE ../common/footer.php#>
+
+</body>
+</html>
